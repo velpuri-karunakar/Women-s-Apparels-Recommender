@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-st.set_page_config('womens-apparels-recommender')
+st.set_page_config('women-s-apparels-recommender')
 
 odf = pd.read_csv('flipkartdata.csv')
 sdf = pd.read_csv('similar_feat.csv')
