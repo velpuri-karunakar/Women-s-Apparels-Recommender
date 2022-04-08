@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run amazon_sarees_app.py
+web: sh setup.sh && streamlit run app.py
