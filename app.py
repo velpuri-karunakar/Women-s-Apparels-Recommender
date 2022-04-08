@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-st.set_page_config('Flipkart women dresses Recommendation System')
+st.set_page_config('womens-apparels-recommender')
 
 odf = pd.read_csv('flipkartdata.csv')
 sdf = pd.read_csv('similar_feat.csv')
@@ -10,7 +10,7 @@ def get_recommendation(id):
     rec_df = odf.iloc[sdf.iloc[id][1:]]
     return rec_df
 
-st.header('Flipkart women dresses Recommendation System')
+st.header('womens-apparels-recommender')
 
 
 product_list = odf['item'].values
