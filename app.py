@@ -1,14 +1,20 @@
 import pandas as pd
 import streamlit as st
-st.set_page_config('women-s-apparels-recommender')
+st.set_page_config(page_title='women-s-apparels-recommender')
+
 
 odf = pd.read_csv('flipkartdata.csv')
 sdf = pd.read_csv('similar_feat.csv')
 
 
 def get_recommendation(id):
-    rec_df = odf.iloc[sdf.iloc[id][1:]]
-    return rec_df
+    try:
+        indices = list(map(int, sdf.iloc[id][1:].values))
+        return odf.iloc[indices]
+    except Exception as e:
+        st.error(f"Error fetching recommendations: {e}")
+        return pd.DataFrame()
+
 
 st.header('womens-apparels-recommender')
 
